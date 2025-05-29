@@ -81,6 +81,24 @@ public class ArrayBasedLists<T> {
 		}
 		return this.arr[index];
 	}
+	
+	/**
+	 * Deletes the element at position index
+	 * @param index is the position where the element is stored
+	 * @return the element being removed
+	 */
+	public T deleteElementAtIndex(int index) {
+		if (index < 0 || index > this.size) {
+			throw new IllegalArgumentException("Index out of bounds");
+		}
+		T result = this.arr[index]; // This is the element being removed
+		for (int i = index; i < this.size - 1; i++) { // Starting at the index, we now overwrite to the next element 
+			this.arr[i] = this.arr[i + 1];
+		}
+		this.size--;
+		return result;
+	}
+	
 	/**
 	 * Shows the elements of the array in string form
 	 */
