@@ -1,9 +1,9 @@
 
-public class SinglyLinkedList<T> {
+public class LinkedList<T> {
 	private int size;
 	private Node<T> head;
 	
-	public SinglyLinkedList() {
+	public LinkedList() {
 		this.head = null;
 		this.size = 0;
 	}
@@ -13,6 +13,14 @@ public class SinglyLinkedList<T> {
 	 */
 	public int getSize() {
 		return this.size;
+	}
+	
+	/**
+	 * Adds the node to the end of the list
+	 * @param node
+	 */
+	public void add(T node) {
+		this.insertAtIndex(this.size, node);
 	}
 	
 	/**
@@ -72,6 +80,7 @@ public class SinglyLinkedList<T> {
 			throw new IllegalArgumentException("Out of bounds");
 		}
 		T result ;
+		// If index is the head node
 		if (index == 0) {
 			result = this.head.getElement();
 			this.head = this.head.getNext();
