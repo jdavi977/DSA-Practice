@@ -40,6 +40,14 @@ public class Stack<T> {
 		return this.linkedList.getElement(this.linkedList.getSize() - 1);
 	}
 	
+	/**
+	 * Method to see if the stack is empty
+	 * @return true or false depending on size
+	 */
+	public boolean isEmpty() {
+		return (this.size() == 0);
+	}
+	
 	public static void main(String args[]) {
 		Stack<Integer> s = new Stack<>();
 		s.push(10);
